@@ -11,9 +11,6 @@ URL_PATTERN = 'https://buymeacoffee.com/vkv_official/'
 EXCLUDE_URLS = ['https://buymeacoffee.com/vkv_official/membership', 'https://buymeacoffee.com/vkv_official/posts']
 POSTS_FILE = 'posts.json'
 
-# TOKEN = "517477451:AAHlSgvG0J6J_Af9jsqJnBWIKSk3jm8pK5Q"
-# CHAT_ID = "227756922"
-
 class VKVMonitor():
     def __init__(self) -> None:
         self.chat_id = os.environ.get('CHAT_ID')
