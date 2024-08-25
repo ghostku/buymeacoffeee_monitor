@@ -32,7 +32,7 @@ class VKVMonitor():
 
         response = requests.get(url, params=params)
         if not response.status_code == 200:
-            raise TelergamError(response.json)
+            raise TelergamError(response.json())
 
     def process_new_post(self, url: str, posts: dict) -> dict:
         soup = BeautifulSoup(requests.get(url).content, 'html.parser')
