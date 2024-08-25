@@ -50,7 +50,7 @@ class VKVMonitor():
     def process(self):
         message = 'Запустили чудо моніторинг постів від ВКВ на buymeacoffee'
         log.info(message)
-        self.send_message(message)
+        # self.send_message(message)
         try:
             posts = json.load(open(POSTS_FILE))
         except (FileNotFoundError, JSONDecodeError):
