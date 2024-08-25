@@ -11,6 +11,11 @@ URL_PATTERN = 'https://buymeacoffee.com/vkv_official/'
 EXCLUDE_URLS = ['https://buymeacoffee.com/vkv_official/membership', 'https://buymeacoffee.com/vkv_official/posts', 'https://buymeacoffee.com/vkv_official/extras/checkout/0']
 POSTS_FILE = 'posts.json'
 
+
+class TelergamError(Exception):
+    pass
+
+
 class VKVMonitor():
     def __init__(self) -> None:
         self.chat_id = os.environ.get('CHAT_ID')
@@ -26,7 +31,8 @@ class VKVMonitor():
         }
 
         response = requests.get(url, params=params)
-        log.debug(response.json())
+        if not response.status_code == 200:
+            raise TelergamError(response.json)
 
     def process_new_post(self, url: str, posts: dict) -> dict:
         soup = BeautifulSoup(requests.get(url).content, 'html.parser')
