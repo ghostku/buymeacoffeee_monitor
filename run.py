@@ -8,7 +8,7 @@ from json import JSONDecodeError
 
 URL = 'https://buymeacoffee.com/vkv_official'
 URL_PATTERN = 'https://buymeacoffee.com/vkv_official/'
-EXCLUDE_URLS = ['https://buymeacoffee.com/vkv_official/membership', 'https://buymeacoffee.com/vkv_official/posts']
+EXCLUDE_URLS = ['https://buymeacoffee.com/vkv_official/membership', 'https://buymeacoffee.com/vkv_official/posts', 'https://buymeacoffee.com/vkv_official/extras/checkout/0']
 POSTS_FILE = 'posts.json'
 
 class VKVMonitor():
